@@ -1,0 +1,17 @@
+.container{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+}
+.icons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.icon{
+    opacity: 0.8;
+    cursor: pointer;
+}
