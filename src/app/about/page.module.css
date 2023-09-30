@@ -12,7 +12,22 @@
     object-fit: cover;
     filter: grayscale(90%);
 }
-
+.imgText{
+    background-color: #53c28b;
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.imgTitle{
+    color: white;
+}
+.imgDesc{
+    color:white;
+    margin: 0;
+}
 .textContainer{
     display: flex;
     justify-content: space-between;
