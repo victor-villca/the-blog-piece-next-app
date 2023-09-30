@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '@/components/button/Button'
+import Button from '@/components/general/Button'
 import styles from './page.module.css'
 import Image from 'next/image'
 
