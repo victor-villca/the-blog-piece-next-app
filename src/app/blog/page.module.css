@@ -1,3 +1,15 @@
-.container{
-    background-color: red;
+.blogContainer{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 50px;
+
+}
+.img{
+    object-fit: cover;
+}
+.imgContainer{
+    width: 400px;
+    height: 250px;
+    position: relative;
 }

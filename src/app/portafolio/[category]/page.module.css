@@ -13,6 +13,9 @@
     height: 500px;  
     position: relative;
 }
+.img{
+    object-fit: cover;
+}
 .textContainer{
     flex: 1;
     display: flex;
