@@ -1,5 +1,3 @@
-'use client'
-import { useState, useEffect } from 'react'
 import styles from './page.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -22,25 +20,8 @@ async function getJsonPlaceholderData() {
 }
 
 const Blog = async () => {
-  const [photos, setPhotos] = useState([]);
-  const [posts, setPosts] = useState([]);
-  const numberOfItems = 15;
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const curatedPhotos = await getCuratedPhotos(numberOfItems);
-        setPhotos(curatedPhotos);
-
-        const jsonData = await getJsonPlaceholderData();
-        setPosts(jsonData);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    fetchData();
-  }, []);
+  const posts = await getJsonPlaceholderData()
+  const photos = await getCuratedPhotos(100)
   return (
     <div className={styles.container}>
         {photos.map((photo, index) => (
