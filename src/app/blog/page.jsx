@@ -25,21 +25,26 @@ const Blog = async () => {
   return (
     <div className={styles.container}>
         {photos.map((photo, index) => (
-          <Link href={`/blog/blog-${index+1}-${photo.id}`} key={index} className={styles.blogContainer}>
-              <div className={styles.imgContainer}>
-              <Image
-                className={styles.img}
-                width={400}
-                height={250}
-                src={photo.src.large}
-                alt={photo.alt}
-              />
-            </div>
-            <div className={styles.textContainer}>
-              <h1 className={styles.title}>{posts[index]?.title}</h1>
-              <p className={styles.desc}>{posts[index]?.body}</p>
-            </div>
-          </Link> 
+          <div className={styles.blogContainer}>
+              <Link href={`/blog/blog-${index+1}-${photo.id}`}>
+                <div className={styles.imgContainer}>
+                  <Image
+                    className={styles.img}
+                    width={400}
+                    height={250}
+                    src={photo.src.large}
+                    alt={photo.alt}
+                  />
+                </div>
+              </Link> 
+              <div className={styles.textContainer}>
+                <Link href={`/blog/blog-${index+1}-${photo.id}`}>
+                  <h1 className={styles.title}>{posts[index]?.title}</h1>
+                </Link> 
+                <p className={styles.desc}>{posts[index]?.body}</p>
+              </div>            
+          </div>
+
       )
       )}
     </div>
