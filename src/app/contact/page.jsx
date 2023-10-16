@@ -6,7 +6,7 @@ import Button from '@/components/general/Button'
 const Contact = () => {
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Let's keep in touch</h1>
+      <h1 className={styles.title}>Lets keep in touch</h1>
       <div className={styles.containerContent}>
         <div className={styles.imgContainer}>
             <Image 
