@@ -1,7 +1,8 @@
-import ComponentLoading from "@/components/Loading"
+import Preloader from "@/components/preloader/Preloader"
+
 
 const loading = () => {
-  return <ComponentLoading />
+  return <Preloader />
 }
 
 export default loading

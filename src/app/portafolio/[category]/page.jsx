@@ -34,6 +34,7 @@ function Category({params}) {
             fill={true}
             src={cat.image}
             alt='image'
+            loading="eager"
             />
           </div>
         </div>

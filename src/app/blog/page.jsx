@@ -34,6 +34,7 @@ const Blog = async () => {
                     height={250}
                     src={photo.src.large}
                     alt={photo.alt}
+                    loading="lazy"
                   />
                 </div>
               </Link> 
