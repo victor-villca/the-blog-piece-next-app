@@ -3,6 +3,9 @@ import { Inter, Concert_One, Eczar } from 'next/font/google'
 import Footer from '@/components/footer/Footer'
 import Navbar from '@/components/navbar/Navbar'
 import { ThemeProvider } from '@/context/ThemeContext'
+
+import AuthProvider from '@/components/authProvider/AuthProvider'
+
 const inter = Eczar({ subsets: ['latin']})
 
 export const metadata = {
@@ -15,11 +18,14 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <ThemeProvider>
-          <div className='container'>
-            <Navbar />
-            {children}
-            <Footer />
-          </div>
+          <AuthProvider>
+            <div className='container'>
+              <Navbar />
+              {children}
+              <Footer />
+            </div>
+          </AuthProvider>
+          
         </ThemeProvider>
         </body>
     </html>
