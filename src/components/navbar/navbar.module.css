@@ -20,3 +20,8 @@
     cursor: pointer;
     border-radius: 3px;
 }
+.img{
+    object-fit: contain;
+    position: relative;
+    margin-top: 1rem;
+}
