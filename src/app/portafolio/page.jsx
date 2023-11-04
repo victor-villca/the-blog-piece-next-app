@@ -1,20 +1,18 @@
 import React from 'react'
 import styles from './page.module.css'
 import Link from 'next/link'
+import portafolioLinks from '@/utils/portafolioLinks'
 const Portafolio = () => {
   return (
     <div className={styles.container}>
       <h1 className={styles.selectTitle}>Choose your gallery</h1>
       <div className={styles.items}>
-        <Link href={"/portafolio/illustrations"} className={styles.item}>
-            <span className={styles.itemText}>Ilustraitions</span>
-        </Link>
-        <Link href={"/portafolio/websites"} className={styles.item}>
-            <span className={styles.itemText}>Websites</span>
-        </Link>
-        <Link href={"/portafolio/applications"} className={styles.item}>
-            <span className={styles.itemText}>Application</span>
-        </Link>
+        {portafolioLinks.map((link) => (
+            <Link href={`/portafolio/${link.direction}`} key={link.id} className={styles.item}>
+              <span className={styles.itemText}>{link.name}</span>
+            </Link>
+        ))
+      }
       </div>
     </div>
   )

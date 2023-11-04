@@ -2,7 +2,7 @@ import styles from './page.module.css'
 import Image from 'next/image'
 import { createClient } from 'pexels';
 async function getPhotoId(id) {
-  const client = createClient('BHcip3yhA3H3l3zet6335GbGYIQLPvDWvhmUgJniQ398RmzjAxnXbBoZ');
+  const client = createClient(process.env.PEXEL_CLIENT);
   const photoId = parseInt(id.split('-')[2]);
   const photo = await client.photos.show({ id: photoId });
   if (!photo) {
@@ -12,25 +12,25 @@ async function getPhotoId(id) {
   return photo;
 }
 
-async function getJsonPlaceholderData(id) {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id.split('-')[1]}`, {
+async function getJsonBlogData(id) {
+  const res = await fetch(`${process.env.POSTS_API}/${id.split('-')[1]}`, {
     cache: 'no-store'
   });
   if (!res.ok) {
-    throw new Error('Failed to fetch blog data' + `https://jsonplaceholder.typicode.com/posts/${id}`);
+    throw new Error('Failed to fetch blog data' + `${process.env.POSTS_API}/${id}`);
   }
   return res.json();
 }
 
 const BlogIdPost = async ({params}) => {
-  const placeholderData = await getJsonPlaceholderData(params.id)
+  const blogData = await getJsonBlogData(params.id)
   const photoPexels = await getPhotoId(params.id);
   return (
     <div className={styles.container}>
       <div className={styles.top}>
         <div className={styles.contentContainer}>
-          <h1 className={styles.title}>{placeholderData.title}</h1>
-          <p className={styles.desc}>{placeholderData.body}</p>
+          <h1 className={styles.title}>{blogData.title}</h1>
+          <p className={styles.desc}>{blogData.body}</p>
           <div className={styles.authorContainer}>
             <Image 
             className ={styles.imgAuthor}
@@ -38,6 +38,7 @@ const BlogIdPost = async ({params}) => {
             height={50}
             width={50}
             alt='author img'
+            loading="lazy"
             />
             <p className={styles.author}>
               {photoPexels.photographer}
@@ -52,16 +53,17 @@ const BlogIdPost = async ({params}) => {
           width={550}
           height={300}
           alt={photoPexels.alt}
+          loading="lazy"
           />
         </div>
       </div>
       <div className={styles.bottom}>
-        <p>{placeholderData.body}</p>
-        <p>{placeholderData.body}</p>
-        <p>{placeholderData.body}</p>
-        <p>{placeholderData.body}</p>
-        <p>{placeholderData.body}</p>
-        <p>{placeholderData.body}</p>
+        <p>{blogData.body}</p>
+        <p>{blogData.body}</p>
+        <p>{blogData.body}</p>
+        <p>{blogData.body}</p>
+        <p>{blogData.body}</p>
+        <p>{blogData.body}</p>
       </div>
     </div>
   )

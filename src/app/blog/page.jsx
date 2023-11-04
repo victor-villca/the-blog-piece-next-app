@@ -1,16 +1,15 @@
+import 'dotenv/config'
 import styles from './page.module.css'
-import Link from 'next/link'
-import Image from 'next/image'
 import { createClient } from 'pexels';
-
+import BlogCard from '@/components/blog/BlogCard';
 
 async function getCuratedPhotos(count) {
-  const client = createClient('BHcip3yhA3H3l3zet6335GbGYIQLPvDWvhmUgJniQ398RmzjAxnXbBoZ');
+  const client = createClient(process.env.PEXEL_CLIENT);
   const response = await client.photos.curated({ per_page: count });
   return response.photos;
 }
 async function getJsonPlaceholderData() {
-  const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
+  const res = await fetch(process.env.POSTS_API, {
     cache: 'no-store'
   });
   if (!res.ok) {
@@ -21,31 +20,16 @@ async function getJsonPlaceholderData() {
 
 const Blog = async () => {
   const posts = await getJsonPlaceholderData()
-  const photos = await getCuratedPhotos(100)
+  const photos = await getCuratedPhotos(process.env.POSTS_PETIONS)
   return (
     <div className={styles.container}>
-        {photos.map((photo, index) => (
-          <div className={styles.blogContainer} key={photo.id}>
-              <Link href={`/blog/blog-${index+1}-${photo.id}`}>
-                <div className={styles.imgContainer}>
-                  <Image
-                    className={styles.img}
-                    width={400}
-                    height={250}
-                    src={photo.src.large}
-                    alt={photo.alt}
-                    loading="lazy"
-                  />
-                </div>
-              </Link> 
-              <div className={styles.textContainer}>
-                <Link href={`/blog/blog-${index+1}-${photo.id}`}>
-                  <h1 className={styles.title}>{posts[index]?.title}</h1>
-                </Link> 
-                <p className={styles.desc}>{posts[index]?.body}</p>
-              </div>            
-          </div>
-
+        {photos.map((photos, indexes) => (
+          <BlogCard 
+            photo={photos}
+            index={indexes}      
+            posts={posts}
+            key={indexes}
+          />
       )
       )}
     </div>
