@@ -2,6 +2,12 @@ import React from 'react'
 import styles from './page.module.css'
 import Link from 'next/link'
 import portafolioLinks from '@/utils/portafolioLinks'
+
+export const metadata = {
+  title: 'The Blog Piece - Your portafolio',
+  description: 'Your own portafolio',
+}
+
 const Portafolio = () => {
   return (
     <div className={styles.container}>

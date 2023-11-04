@@ -8,6 +8,11 @@ import BlogCard from '@/components/blog/BlogCard';
 //   const response = await client.photos.curated({ per_page: count });
 //   return response.photos;
 // }
+
+export const metadata = {
+  title: 'The Blog Piece - Blogs',
+  description: "Your personalized blogs",
+}
 async function getJsonPlaceholderData() {
   const res = await fetch('http://localhost:3000/api/posts', {
     cache: 'no-store'
