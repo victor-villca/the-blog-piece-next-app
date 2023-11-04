@@ -8,7 +8,7 @@ import navLinks from '@/utils/navLinks'
 const Navbar = () => {
   return (
         <div className={styles.container}>
-            <Link href={"/"} className={styles.logo}> aaa </Link>
+            <Link href={"/"} className={styles.logo}> BloggyApp </Link>
             <div className={styles.links}>
                 <DarkModeToggle />
                 {navLinks.map((link) =>(
