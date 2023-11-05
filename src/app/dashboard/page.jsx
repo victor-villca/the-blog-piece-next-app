@@ -1,3 +1,4 @@
+'use client'
 import styles from './page.module.css'
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
@@ -14,7 +15,6 @@ const Dashboard = () => {
     `/api/posts?username=${session?.data?.user.name}`,
     fetcher
   )
-  console.log(data)
   const handleDelete= async (id) => {
     try {
       await fetch(`/api/posts/${id}`, {
