@@ -5,13 +5,11 @@
     justify-content: space-between;
     font-size: 12px;
 }
-.icons{
+
+.socialContainer{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-}
-.icon{
-    opacity: 0.8;
-    cursor: pointer;
+    gap: 0.5rem;
 }

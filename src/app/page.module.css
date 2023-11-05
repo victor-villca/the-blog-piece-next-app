@@ -5,14 +5,15 @@
   gap: 100px;
 }
 .item{
-  flex:1;
+  flex:2;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 50px;
 }
-
-
+.itemImg{
+  flex: 1;
+}
 .img{
   width: 100%;
   height: auto;
@@ -29,12 +30,13 @@
 }
 
 .title{
-  font-size: 64px;
+  font-size: 56px;
   background: linear-gradient(to bottom, #194c33, #bbb) ;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  line-height: 1.2;
 }
 .desc{
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 400;
 }

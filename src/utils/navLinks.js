@@ -6,13 +6,13 @@ const navLinks = [
     },
     {
         id : 2,
-        direction: "/about",
-        name : "About Us",
+        direction: "/blog",
+        name : "Blogs",
     },
     {
         id : 3,
-        direction: "/blog",
-        name : "Blogs",
+        direction: "/dashboard",
+        name : "Dashboard",
     },
     {
         id : 4,
@@ -21,13 +21,9 @@ const navLinks = [
     },
     {
         id : 5,
-        direction: "/dashboard",
-        name : "Dashboard",
+        direction: "/about",
+        name : "About Us",
     },
-    {
-        id : 6,
-        direction: "/portafolio",
-        name : "Portafolio",
-    },
+
 ]
 export default navLinks;

@@ -13,10 +13,10 @@ const Navbar = () => {
         <div className={styles.container}>
             <Link href={"/"} className={styles.logo}>
                 <Image 
-                    src={"/logo.png"}
+                    src={"/logo.svg"}
                     alt='logo'
-                    width={250}
-                    height={90}
+                    width={180}
+                    height={60}
                     className={styles.img}
                 />
             </Link>
@@ -33,7 +33,7 @@ const Navbar = () => {
                     ):(
                       <>
                         <Link href={"/dashboard/login"} className={styles.login}>Log in</Link>
-                        <Link href={"/dashboard/register"} className={styles.login}>Sign up</Link>
+                        <Link href={"/dashboard/register"} className={styles.register}>Sign up</Link>
                       </>
                       
                     )}              

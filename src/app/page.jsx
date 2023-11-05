@@ -7,18 +7,22 @@ export default function Home() {
     <div className={styles.container}>
       <div className={styles.item}>
         <h1 className={styles.title}>
-          This is h1 title for the Home Page
+        The Blog Piece - Your Anime Blogging Hub
         </h1>
         <p className= {styles.desc}>
-          this is the parragraph for the home page, i do not want to use lorem, so i am practicing my writting speed right now. more textt moreee, i am creating a blog next js web site
+        Welcome to The Blog Piece, where your love for anime meets the blogosphere. Join our community, create blogs, and explore the anime world through the eyes of fellow fans.
         </p>
         <Button
-          txt = "See more"
-          hrfe={"/about"}
+          txt = "Start Blogging"
+          hrfe={"/dashboard/register"}
          />
       </div>
-      <div className={styles.item}>
-        <Image src={HomeImage} alt='web'className={styles.img}/>
+      <div className={styles.itemImg}>
+        <Image src={'/home.svg'} 
+        alt='web'className={styles.img}
+        width={500}
+        height={500}
+        />
       </div>
       
     </div>
