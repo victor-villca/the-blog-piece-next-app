@@ -3,42 +3,23 @@ import Link from 'next/link'
 import React from 'react'
 import styles from './navbar.module.css'
 import DarkModeToggle from '../darkModeToggle/DarkModeToggle'
-const navLinks = [
-    {
-        id : 1,
-        direction: "/",
-        name : "home",
-    },
-    {
-        id : 2,
-        direction: "/about",
-        name : "about",
-    },
-    {
-        id : 3,
-        direction: "/blog",
-        name : "blog",
-    },
-    {
-        id : 4,
-        direction: "/contact",
-        name : "contact",
-    },
-    {
-        id : 5,
-        direction: "/dashboard",
-        name : "dashboard",
-    },
-    {
-        id : 6,
-        direction: "/portafolio",
-        name : "portafolio",
-    },
-]
+import navLinks from '@/utils/navLinks'
+import Image from 'next/image'
+import { signOut, useSession } from 'next-auth/react'
+
 const Navbar = () => {
+  const session = useSession();
   return (
         <div className={styles.container}>
-            <Link href={"/"} className={styles.logo}> aaa </Link>
+            <Link href={"/"} className={styles.logo}>
+                <Image 
+                    src={"/logo.png"}
+                    alt='logo'
+                    width={250}
+                    height={90}
+                    className={styles.img}
+                />
+            </Link>
             <div className={styles.links}>
                 <DarkModeToggle />
                 {navLinks.map((link) =>(
@@ -46,8 +27,18 @@ const Navbar = () => {
                             {link.name}
                         </Link>
                     ))}
-                <button className={styles.logout} onClick={()=>(console.log("logging out"))}>Log out</button>
+
+                    {session.status === "authenticated" ? (
+                      <button className={styles.logout} onClick={signOut}>Log out</button>
+                    ):(
+                      <>
+                        <Link href={"/dashboard/login"} className={styles.login}>Log in</Link>
+                        <Link href={"/dashboard/register"} className={styles.login}>Sign up</Link>
+                      </>
+                      
+                    )}              
             </div>
+            
         </div>
         
   )

@@ -3,6 +3,11 @@ import Button from '@/components/general/Button'
 import styles from './page.module.css'
 import Image from 'next/image'
 
+export const metadata = {
+  title: 'The Blog Piece - About us',
+  description: 'Get to know more about our blog',
+}
+
 export default function About(){
   return (
     <div className={styles.container}>
