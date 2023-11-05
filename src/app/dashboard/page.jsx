@@ -17,7 +17,6 @@ const Dashboard = () => {
     fetcher
   )
   console.log(data)
-  
   const handleDelete= async (id) => {
     try {
       await fetch(`/api/posts/${id}`, {
