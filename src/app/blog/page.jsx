@@ -1,30 +1,41 @@
+'use client'
 import 'dotenv/config'
 import styles from './page.module.css'
+import { useState, useEffect } from 'react';
 import { createClient } from 'pexels';
 import BlogCard from '@/components/blog/BlogCard';
-
-// async function getCuratedPhotos(count) {
-//   const client = createClient(process.env.PEXEL_CLIENT);
-//   const response = await client.photos.curated({ per_page: count });
-//   return response.photos;
-// }
 
 export const metadata = {
   title: 'The Blog Piece - Blogs',
   description: "Your personalized blogs",
 }
-async function getJsonPlaceholderData() {
-  const res = await fetch('http://localhost:3000/api/posts', {
-    cache: 'no-store'
-  });
-  if (!res.ok) {
-    throw new Error('Failed to fetch blog data');
+
+export const getStaticProps = () => {
+  return {
+    props: {},
+    revalidate: 1 
   }
-  return res.json();
 }
 
 const Blog = async () => {
-  const posts = await getJsonPlaceholderData()
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const res = await fetch('/api/posts');
+        if (res.ok) {
+          const data = await res.json();
+          setPosts(data);
+        } else {
+          throw new Error('Failed to fetch blog data');
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchPosts();
+  },[])
   return (
     <div className={styles.container}>
         {posts.map(( post, index) => (
