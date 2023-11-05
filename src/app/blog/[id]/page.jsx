@@ -1,19 +1,8 @@
 import styles from './page.module.css'
 import Image from 'next/image'
 import { createClient } from 'pexels';
-// async function getPhotoId(id) {
-//   const client = createClient(process.env.PEXEL_CLIENT);
-//   const photoId = parseInt(id.split('-')[2]);
-//   const photo = await client.photos.show({ id: photoId });
-//   if (!photo) {
-//     throw new Error('Failed to fetch photo data');
-//   }
-  
-//   return photo;
-// }
-
 async function getJsonBlogData(id) {
-  const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
+  const res = await fetch(`https://nextjs-website-ai28zdabp-victor-villcas-projects.vercel.app/api/posts/${id}`, {
     cache: 'no-store'
   });
   if (!res.ok) {
