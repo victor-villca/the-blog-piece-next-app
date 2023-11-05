@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+mongoose.Promise = global.Promise;
 const postSchema = mongoose.Schema(
     {
         title: {

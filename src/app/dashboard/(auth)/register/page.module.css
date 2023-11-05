@@ -1,0 +1,35 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.form{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+.input{
+    padding: 20px;
+    background: transparent;
+    border: 2px solid #bbb;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: azure;
+}
+.button{
+    padding:20px;
+    cursor: pointer;
+    border: none;
+    background-color: #53c28b;
+    border-radius: 5px;
+    width: 30%;
+    font-size: 18px;
+    color: white;
+  }
