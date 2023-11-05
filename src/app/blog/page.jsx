@@ -5,10 +5,6 @@ import { useState, useEffect } from 'react';
 import { createClient } from 'pexels';
 import BlogCard from '@/components/blog/BlogCard';
 
-export const metadata = {
-  title: 'The Blog Piece - Blogs',
-  description: "Your personalized blogs",
-}
 const Blog = async () => {
   const [posts, setPosts] = useState([]);
 
