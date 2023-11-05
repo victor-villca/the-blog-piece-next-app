@@ -10,13 +10,6 @@ export const metadata = {
   description: "Your personalized blogs",
 }
 
-export const getStaticProps = () => {
-  return {
-    props: {},
-    revalidate: 1 
-  }
-}
-
 const Blog = async () => {
   const [posts, setPosts] = useState([]);
 

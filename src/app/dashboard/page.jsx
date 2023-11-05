@@ -6,13 +6,6 @@ import { useRouter } from 'next/navigation'
 import useSWR from 'swr'
 import Image from 'next/image'
 
-export const getStaticProps = () => {
-  return {
-    props: {},
-    revalidate: 1 
-  }
-}
-
 const Dashboard = () => {
   const router = useRouter()
   const session= useSession()
