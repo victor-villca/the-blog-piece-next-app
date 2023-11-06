@@ -30,7 +30,7 @@ export default function About(){
           <div className={styles.item}>
               <h1>What do we do?</h1>
               <p>
-              At The Blog Piece, we are passionate about fostering a vibrant anime community. We provide a user-friendly web app that enables you to create and manage your anime blogs. Whether you're an aspiring writer or a dedicated reader, our platform is your gateway to the world of captivating anime content. We're here to make your anime blogging experience enjoyable and memorable.
+              At The Blog Piece, we are passionate about fostering a vibrant anime community. We provide a user-friendly web app that enables you to create and manage your anime blogs. Whether you&apos;re an aspiring writer or a dedicated reader, our platform is your gateway to the world of captivating anime content. We&apos;re here to make your anime blogging experience enjoyable and memorable.
               </p>
           </div>
 

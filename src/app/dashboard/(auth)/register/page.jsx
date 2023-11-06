@@ -33,7 +33,7 @@ const Register = () => {
   return (
     <div className={styles.container}>
       <form className={styles.form} onSubmit={handleSubmit}>
-        <h1 className={styles.title}>Welcome to The Blog Piece! Let's Get Started</h1>
+        <h1 className={styles.title}>Welcome to The Blog Piece! Let&apos;s Get Started</h1>
         <input type="text" placeholder='Username' className={styles.input} required/>
         <input type="email" placeholder='Email' className={styles.input} required/>
         <input type="password" placeholder='Password' className={styles.input} required/>
