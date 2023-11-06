@@ -33,9 +33,10 @@ const Register = () => {
   return (
     <div className={styles.container}>
       <form className={styles.form} onSubmit={handleSubmit}>
-        <input type="text" placeholder='username' className={styles.input} required/>
-        <input type="email" placeholder='email' className={styles.input} required/>
-        <input type="password" placeholder='password' className={styles.input} required/>
+        <h1 className={styles.title}>Welcome to The Blog Piece! Let&apos;s Get Started</h1>
+        <input type="text" placeholder='Username' className={styles.input} required/>
+        <input type="email" placeholder='Email' className={styles.input} required/>
+        <input type="password" placeholder='Password' className={styles.input} required/>
         <button className={styles.button}>Create Account</button>
       </form>
       {error && "ERROR MESSAGE"}

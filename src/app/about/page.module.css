@@ -1,5 +1,4 @@
 .container{
-    
 }
 
 .imgContainer{
@@ -20,6 +19,7 @@
     padding: 20px;
     border-radius: 5px;
     box-sizing: border-box;
+    line-height: 1.3;
 }
 .imgTitle{
     color: white;
@@ -27,6 +27,7 @@
 .imgDesc{
     color:white;
     margin: 0;
+    font-weight: 400;
 }
 .textContainer{
     display: flex;

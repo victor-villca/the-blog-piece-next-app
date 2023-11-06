@@ -4,6 +4,9 @@ import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import useSWR from 'swr'
 import Image from 'next/image'
+import Preloader from '@/components/preloader/Preloader'
+import {AiFillDelete} from 'react-icons/ai'
+import Link from 'next/link'
 
 const Dashboard = () => {
   const router = useRouter()
@@ -52,11 +55,10 @@ const Dashboard = () => {
   }
 
   if(session.status === "loading"){
-    return <p>Loading Authentication from Server</p>
+    return <Preloader />
   }
   else{
     if(session.status === "unauthenticated"){
-      alert("Please login to access dashboard")
       router?.push("/dashboard/login")
     }
     else{
@@ -70,20 +72,26 @@ const Dashboard = () => {
                     <Image 
                       src={post.image}
                       alt='post image'
-                      width={200}
-                      height={100}
+                      width={400}
+                      height={150}
                       className={styles.img}
                     />
+                    <div className= {styles.deleteContainer}>
+                      <span onClick={() => handleDelete(post._id)} className={styles.delete}>
+                        <AiFillDelete 
+                          size={"2rem"}
+                        />
+                      </span>
+                    </div>
                   </div>
                   <div className={styles.postContentContainer}>
-                    <h2 className={styles.title}>{post.title}</h2>
-                    <span onClick={() => handleDelete(post._id)} className={styles.delete}>X</span>
+                    <Link href={`/blog/${post._id}`} className={styles.title}><span className= {styles.titleSpan}>Title:</span> {post.title}</Link>
                   </div>
                 </div>
               ))}
             </div>
             <form className={styles.postForm} onSubmit={handleSubmit} >
-                <h1>Add a new post</h1>
+                <h1 className= {styles.formTitle}>Create a new post</h1>
                 <input type="text" className={styles.input} placeholder='Title' required/>
                 <input type="text" className={styles.input} placeholder='Description' required/>
                 <input type="text" className={styles.input} placeholder='Image link' required/>

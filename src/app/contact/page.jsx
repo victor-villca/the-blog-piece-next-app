@@ -11,11 +11,14 @@ export const metadata = {
 const Contact = () => {
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Lets keep in touch</h1>
+      <div className={styles.textContainer}>
+        <h1 className={styles.title}>Get in Touch with The Blog Piece Team</h1>
+        <p className={styles.message}>Feel free to contact us regarding bugs or feature requests. Your feedback drives our improvements.</p>
+      </div>
       <div className={styles.containerContent}>
         <div className={styles.imgContainer}>
             <Image 
-            src={"/contact.png"}
+            src={"/email.svg"}
             fill={true}
             alt='image contact'
             className={styles.img}
