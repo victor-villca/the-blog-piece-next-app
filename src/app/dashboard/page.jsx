@@ -6,6 +6,7 @@ import useSWR from 'swr'
 import Image from 'next/image'
 import Preloader from '@/components/preloader/Preloader'
 import {AiFillDelete} from 'react-icons/ai'
+import Link from 'next/link'
 
 const Dashboard = () => {
   const router = useRouter()
@@ -58,7 +59,6 @@ const Dashboard = () => {
   }
   else{
     if(session.status === "unauthenticated"){
-      alert("Please login to access dashboard")
       router?.push("/dashboard/login")
     }
     else{
@@ -85,7 +85,7 @@ const Dashboard = () => {
                     </div>
                   </div>
                   <div className={styles.postContentContainer}>
-                    <h2 className={styles.title}><span className= {styles.titleSpan}>Title:</span> {post.title}</h2>
+                    <Link href={`/blog/${post._id}`} className={styles.title}><span className= {styles.titleSpan}>Title:</span> {post.title}</Link>
                   </div>
                 </div>
               ))}

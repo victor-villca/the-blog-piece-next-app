@@ -10,26 +10,28 @@
     width: 400px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    flex: 1;
     gap: 2rem;
 }
 .input{
-    padding: 20px;
-    background: transparent;
-    border: 2px solid #bbb;
-    border-radius: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    color: azure;
+  padding: 10px;
+  background-color: transparent;
+  border: 2px solid #bbb;
+  border-radius: 10px;
+  color: #bbb;
+  font-size: 20px;
+  
 }
-.button{
-    padding:20px;
-    cursor: pointer;
-    border: none;
-    background-color: #53c28b;
-    border-radius: 5px;
-    width: 30%;
-    font-size: 18px;
-    color: white;
-  }
+
+.button {
+  padding: 20px;
+  cursor: pointer;
+  background-color: #53c28b;
+  border: none;
+  border-radius: 5px;
+  color: #eee;
+  font-weight: bold;
+}
+.title{
+    text-align: center;
+}
