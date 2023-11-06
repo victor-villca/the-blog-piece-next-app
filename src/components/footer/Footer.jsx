@@ -21,16 +21,15 @@ const Footer = () => {
   return (
     <div className={styles.container}>
       <div className={styles.socialContainer}>
-        <p className="footer-title">Follow me</p>
-        <ul className="social-links">
+        <ul className={styles.links}>
           {socialLinks.map((link) => (
             <Link
               href={link.url}
               target="__blank"
               key={link.id}
-              className="social-link"
+              className={styles.link}
             >
-              <i className="social-icon">{link.icon}</i>
+              <i className={styles.icon}>{link.icon}</i>
             </Link>
           ))}
         </ul>

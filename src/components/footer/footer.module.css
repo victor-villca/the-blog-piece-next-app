@@ -1,9 +1,10 @@
 .container{
-    height: 50px;
+    
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-size: 12px;
+    align-items: center;
 }
 
 .socialContainer{
@@ -12,4 +13,41 @@
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
+}
+.title{
+    font-size: 1rem;
+}
+.links{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+}
+.link{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 9999px;
+    background-color: #047857;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+    color: #fff; 
+    font-size: 2rem;
+    justify-content: center;
+    align-items: center; 
+    display: flex;
+}
+.link:hover{
+    background-color: #fff;
+    color: #047857;
+}
+.icon{
+    margin-top: 0.8rem;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+}
+.text{
+    font-size: 14px;
 }

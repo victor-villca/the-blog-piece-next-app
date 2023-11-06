@@ -12,13 +12,11 @@
 }
 .post{
     display: flex;
-    gap: 4rem;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 .imgContainer{
-    width: 200px;
-    height: 100px;
     position: relative;
 }
 .img{
@@ -32,10 +30,23 @@
     justify-content: center;
 
 }
-.delete{
-    color: red;
-    cursor: pointer;
+.deleteContainer{
+    padding: 0.5rem;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
+.delete{
+    color: white;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+.delete:hover{
+    color: rgb(172, 3, 3);
+    transform: scale(2);
+}
+
 .postForm{
     display: flex;
     flex-direction: column;
@@ -48,10 +59,10 @@
   padding: 10px;
   background-color: transparent;
   border: 2px solid #bbb;
-  border-radius: 3px;
+  border-radius: 10px;
   color: #bbb;
   font-size: 20px;
-  font-weight: bold;
+  
 }
 
 .button {
@@ -62,4 +73,13 @@
   border-radius: 5px;
   color: #eee;
   font-weight: bold;
+}
+.formTitle{
+    text-align: center;
+}
+.titleSpan{
+    font-weight: bold;
+}
+.title{
+    font-weight: 400;
 }
