@@ -8,12 +8,12 @@ const socialLinks = [
   {
     id: 1,
     icon: <FaGlobe />,
-    url: "https://the-blog-piece.vercel.app/",
+    url: "/",
   },
   {
     id: 2,
     icon: <FaGithub />,
-    url: "https://github.com/victor-villca/the-blog-piece-next-app",
+    url: "/",
   },
 ];
 const Footer = () => {
