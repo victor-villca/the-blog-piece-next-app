@@ -4,12 +4,13 @@ import styles from './page.module.css'
 import { signIn, useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import {FcGoogle} from 'react-icons/fc'
+import Preloader from '@/components/preloader/Preloader'
 
 const LogIn = () => {
   const session = useSession()
   const router = useRouter()
   if(session.status === "loading"){
-    return <p>Loading Authentication from Server</p>
+    return <Preloader />
   }
 
   if(session.status === "authenticated"){

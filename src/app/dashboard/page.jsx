@@ -7,11 +7,11 @@ import Image from 'next/image'
 import Preloader from '@/components/preloader/Preloader'
 import {AiFillDelete} from 'react-icons/ai'
 import Link from 'next/link'
+import Swal from 'sweetalert2'
 
 const Dashboard = () => {
   const router = useRouter()
   const session= useSession()
-  console.log(session)
 
   const fetcher = (...args) => fetch(...args).then((res)=>res.json());
   const {data, mutate, error, isLoading} = useSWR(
@@ -59,6 +59,10 @@ const Dashboard = () => {
   }
   else{
     if(session.status === "unauthenticated"){
+      Swal.fire({
+        title:'Logged in required !',
+        text: 'Sign up and verify your email to unlock the dashboard experience!'
+      })
       router?.push("/dashboard/login")
     }
     else{
