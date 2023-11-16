@@ -1,46 +1,17 @@
-.preloaderContainer {
-    position: absolute;
-    width: 240px;
-    height: 120px;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-  }
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   
-  #preloader {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
-  
-  #plug,
-  #socket {
-    fill: #fdb515;
-  }
-  
-  #loop-normal {
-    fill: none;
-    stroke: #fdb515;
-    stroke-width: 12;
-  }
-  
-  #loop-offset {
-    display: none;
-  }
-  
-  .credit {
-    position: absolute;
-    bottom: 50px;
-    width: 100%;
-    text-align: center;
-  }
-  
-  .credit a {
-    color: #fdb515;
-    font: 800 75% "Open Sans", sans-serif;
-    text-transform: uppercase;
-    text-decoration: none;
-  }
-  
+}
+.loader {
+  width: 80px;
+  aspect-ratio: 1;
+  background: #8d7958;
+  clip-path: polygon(100.00% 50.00%,64.14% 64.14%,50.00% 100.00%,35.86% 64.14%,0.00% 50.00%,35.86% 35.86%,50.00% 0.00%,64.14% 35.86%);
+  -webkit-mask:radial-gradient(circle 5px,#0000 90%,#000);
+  animation: l1 1.5s infinite linear;
+}
+@keyframes l1{ 
+  100%{transform: rotate(1turn)}
+}
